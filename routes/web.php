@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
@@ -27,14 +28,14 @@ Route::get('/', function () {
     ]);
 });
 
+// Route::get('/', [AuthenticatedSessionController::class, 'create']);
+
 
 Route::middleware('auth')->group(function () {
-    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::resource('customers',CustomerController::class);
+    
 });
 
 require __DIR__.'/auth.php';

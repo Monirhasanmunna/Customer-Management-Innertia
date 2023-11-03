@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Helper\Helper;
 
 class CustomerController extends Controller
 {
@@ -13,7 +15,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Customer/List');
+        $customers = Customer::orderBy('id','DESC')->get();
+        return Inertia::render('Customer/List',['customers'=>$customers]);
     }
 
     /**
