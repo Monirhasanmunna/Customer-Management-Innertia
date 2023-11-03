@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class DashboardController extends Controller
 {
-    public function __invoke()
+    public function index()
     {
-       return Inertia::render('Dashboard');
+        $message = 'Welcome to the website';
+        return Inertia::render('Dashboard')->with(['message'=>$message]);
     }
 }

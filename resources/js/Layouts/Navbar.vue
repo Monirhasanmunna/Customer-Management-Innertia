@@ -1,5 +1,9 @@
 <script setup>
-    
+  import { usePage } from '@inertiajs/vue3';
+  import {Link} from '@inertiajs/vue3'
+  const page = usePage();
+
+  const user = page.props.auth.user;
 </script>
 
 <template>
@@ -14,7 +18,7 @@
             </svg>
          </button>
         <a href="/" class="flex ml-2 md:mr-24">
-          <span class="self-center text-xl font-semibold sm:text-xl text-gray-500 whitespace-nowrap dark:text-white">Customer Management</span>
+          <span class="self-center text-xl font-semibold sm:text-xl text-gray-500 whitespace-nowrap dark:text-white">Customer Management {{ user.email }}</span>
         </a>
       </div>
       <div class="flex items-center">
@@ -45,7 +49,7 @@
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Earnings</a>
                 </li>
                 <li>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>
+                  <Link :href="route('logout')" method="post" class="block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</Link>
                 </li>
               </ul>
             </div>
