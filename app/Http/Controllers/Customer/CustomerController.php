@@ -7,6 +7,8 @@ use App\Models\Customer;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Helper\Helper;
+use App\Rules\CustomerEmailCheckRule;
+use Illuminate\Support\Facades\Redirect;
 
 class CustomerController extends Controller
 {
@@ -32,7 +34,27 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'first_name'    => 'required',
+            'last_name'     => 'required',
+            'email'         => ['required',new CustomerEmailCheckRule],
+            'phone_number'  => 'required|min:11|max:11',
+            'gender'        => 'required',
+            'age'           => 'required'
+        ]);
+
+        Customer::create([
+            'first_name'    => $request->first_name,
+            'last_name'     => $request->last_name,
+            'email'         => $request->email,
+            'mobile_number' => $request->phone_number,
+            'gender'        => $request->gender,
+            'age'           => $request->age,
+        ]);
+
+
+        return Redirect::route('customers.index');
+
     }
 
     /**
