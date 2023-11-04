@@ -71,7 +71,7 @@
 
         <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
             <div class="flex justify-between">
-                <h3 class="text-lg text-gray-500 font-semibold p-2">Create Customer</h3>
+                <h3 class="text-lg text-gray-500 font-semibold p-2">Edit Customer</h3>
                 
                 <Link :href="route('customers.index')" class="flex text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-4 py-2.5 text-center mr-2 mb-2"><Icon icon="material-symbols:arrow-back" width="20" class="mr-1" />Back</Link>
             </div>

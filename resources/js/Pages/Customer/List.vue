@@ -37,7 +37,7 @@
             <div class="grid grid-flow-row auto-rows-max">
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <h2 class="px-5 py-3 text-lg font-semibold text-left text-gray-600 bg-white dark:text-white dark:bg-gray-800">Our Customers</h2>
-                    <div class="flex items-center justify-between px-4 pb-3">
+                    <div class="md:flex space-y-3 md:space-y-0 items-center justify-between px-4 pb-3">
                         <div>
                             <label for="table-search" class="sr-only">Search</label>
                             <div class="relative">
