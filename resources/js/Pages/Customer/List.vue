@@ -94,7 +94,7 @@
                                     {{ customer.mobile_number }}
                                 </td>
                                 <td class="px-6 py-4 flex justify-center">
-                                    <Link href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline mx-1"><Icon width="23" icon="bx:edit" /></Link>
+                                    <Link :href="route('customers.edit',customer.id)" class="font-medium text-blue-600 dark:text-blue-500 hover:underline mx-1"><Icon width="23" icon="bx:edit" /></Link>
                                     <Link href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline"><Icon width="25" icon="lucide:delete" /></Link>
                                 </td>
                             </tr>
